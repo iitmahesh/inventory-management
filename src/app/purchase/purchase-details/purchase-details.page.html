@@ -1,0 +1,42 @@
+<ion-content color="secondary">
+  <ion-input
+        type="text"
+        style="padding:8px;margin:15px auto;width:30%;"
+        placeholder="Type to filter which data you want..."
+        (keyup)="updateFilter($event)"
+  ></ion-input>
+  <ion-card *ngFor="let purchaseData of dataToBeShown">
+    <ion-card-header color="medium">
+      <ion-card-title class="ion-text-center">
+        {{purchaseData.productDesc}} Purchased on {{purchaseData.purchaseDate | date: 'dd/MM/yyyy'}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="ion-text-center">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-sm="4">
+            <ion-label color="primary">Supplier : </ion-label> <ion-text>{{purchaseData.supplier}}</ion-text>
+          </ion-col>
+          <ion-col size="12" size-sm="4">
+            <ion-label color="primary">Product Code : </ion-label> <ion-text>{{purchaseData.productCode}}</ion-text>
+          </ion-col>
+          <ion-col size="12" size-sm="4">
+            <ion-label color="primary">Invoice Number : </ion-label> <ion-text>{{purchaseData.invoiceNumber}}</ion-text>
+          </ion-col>
+          <ion-col size="12" size-sm="4">
+            <ion-label color="primary">Quantity : </ion-label> <ion-text>{{purchaseData.qtyWithQtyType}}</ion-text>
+          </ion-col>
+          <ion-col size="12" size-sm="4">
+            <ion-label color="primary">Rate : </ion-label> <ion-text>{{purchaseData.rate | indiancurrency}}</ion-text>
+          </ion-col>
+          <ion-col size="12" size-sm="4">
+            <ion-label color="primary">Total Amount : </ion-label> <ion-text>{{purchaseData.totalAmount | indiancurrency}}</ion-text>
+          </ion-col>
+          <ion-col size="12" size-sm="4">
+            <ion-label color="primary">Payment : </ion-label> <ion-text>{{purchaseData.payment | indiancurrency}} </ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

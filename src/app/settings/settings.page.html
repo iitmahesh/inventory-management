@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<super-tabs>
+  <super-tabs-toolbar slot="top" color="primary">
+    <super-tab-button>
+      <ion-icon name="people"></ion-icon>
+      <ion-label>Customer Settings</ion-label>
+    </super-tab-button>
+    <super-tab-button>
+      <ion-icon name="file-tray-full-outline"></ion-icon>
+      <ion-label>Supplier Settings</ion-label>
+    </super-tab-button>
+    <super-tab-button>
+      <ion-icon name="construct-outline"></ion-icon>
+      <ion-label>Products</ion-label>
+    </super-tab-button>
+  </super-tabs-toolbar>
+
+  <super-tabs-container>
+    <super-tab>
+      <ion-content>
+       <ion-nav [root]="addCustomers"></ion-nav>
+      </ion-content>
+    </super-tab>
+    <super-tab>
+      <ion-content>
+        <ion-nav [root]="addSuppliers"></ion-nav>
+      </ion-content>
+    </super-tab>
+    <super-tab>
+      <ion-content>
+        <ion-nav [root]="addProducts"></ion-nav>
+      </ion-content>
+    </super-tab>
+  </super-tabs-container>
+
+</super-tabs>

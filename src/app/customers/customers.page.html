@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Customers Summary</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="secondary">
+  <ion-card>
+    <ion-input
+        type="text"
+        style="padding:8px;margin:15px auto;width:30%;"
+        placeholder="Type to filter the name column..."
+        (keyup)="updateFilter($event)"
+    ></ion-input>
+    <ngx-datatable
+        #table
+        class="dark"
+        [rows]="dataToBeShown"
+        [loadingIndicator]="loadingIndicator"
+        [columnMode]="'force'"
+        [headerHeight]="50"
+        [footerHeight]="30"
+        [rowHeight]="'auto'"
+        [limit]="1"
+        [scrollbarH]="true"
+        [selected]="selected"
+        [selectionType]="'checkbox'"
+        [selectAllRowsOnPage]="false"
+        [displayCheck]="displayCheck"
+        (activate)="onActivate($event)"
+        (select)="onSelect($event)"
+      >
+        <ngx-datatable-column
+            [width]="30"
+            [sortable]="false"
+            [canAutoResize]="false"
+            [draggable]="false"
+            [resizeable]="false"
+            [headerCheckboxable]="true"
+            [checkboxable]="true"
+          >
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Customers" prop="customer"></ngx-datatable-column>
+        <ngx-datatable-column name="Opening Balance" prop="openingBalance">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            {{value | indiancurrency }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Sales Amount" prop="salesAmount">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            {{value | indiancurrency }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Amount Received" prop="amountReceived">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            {{value | indiancurrency }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Closing Balance" prop="closingBalance">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            {{value | indiancurrency }}
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+  </ion-card>
+</ion-content>
+

@@ -1,0 +1,59 @@
+<ion-app>
+  <ion-menu side="start" menuId="mainMenu" content-id="main">
+    <ion-header>
+      <ion-toolbar color="danger">
+        <ion-title class="ion-text-center">Main Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list class="ion-no-padding">
+        <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="['/dashboard']" routerLinkActive="active">
+            <ion-label><ion-icon name="podium-outline"></ion-icon>  Dashboard</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item class="ion-text-center"  lines="none" [routerLink]="['/purchase']" routerLinkActive="active">
+            <ion-label><ion-icon name="cart"></ion-icon>  Purchase</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item class="ion-text-center"  lines="none" [routerLink]="['/sales-order']" routerLinkActive="active">
+            <ion-label><ion-icon name="construct"></ion-icon>  Sales Order</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item class="ion-text-center"  lines="none" [routerLink]="['/sales']" routerLinkActive="active">
+            <ion-label><ion-icon name="pricetags"></ion-icon>  Sales</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item class="ion-text-center"  lines="none" [routerLink]="['/inventory']" routerLinkActive="active">
+            <ion-label><ion-icon name="albums-outline"></ion-icon>  Inventory</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item class="ion-text-center"  lines="none" [routerLink]="['/customers']" routerLinkActive="active">
+            <ion-label><ion-icon name="people"></ion-icon>  Customers Summary</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item class="ion-text-center"  lines="none" [routerLink]="['/suppliers']" routerLinkActive="active">
+            <ion-label><ion-icon name="bag-handle-outline"></ion-icon>  Suppliers Summary</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item class="ion-text-center"  lines="none" [routerLink]="['/settings']" routerLinkActive="active">
+            <ion-label><ion-icon name="settings-outline"></ion-icon>  Settings</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="['/sign-out']" routerLinkActive="active">
+            <ion-label>Sign Out</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>
